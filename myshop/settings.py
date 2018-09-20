@@ -25,7 +25,7 @@ SECRET_KEY = '-64=fgwf9#-e^3^kii3$#_b^al5vwe@(orv&xjv(dpf((u)82v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['6babf8bb.ngrok.io']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'orders',
     'payment',
     'paypal.standard.ipn',
+    'coupons',
 ]
 
 MIDDLEWARE = [
