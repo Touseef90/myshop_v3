@@ -22,6 +22,7 @@ from django.utils.translation import gettext_lazy as _
 
 urlpatterns = i18n_patterns(
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^accounts/', include('django.contrib.auth.urls')),
     url(_(r'^cart/'), include('cart.urls', namespace='cart')),
     url(_(r'^orders/'), include('orders.urls', namespace='orders')),
     url(_(r'^payment/'), include('payment.urls', namespace='payment')),

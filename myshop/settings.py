@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'payment',
     'paypal.standard.ipn',
     'coupons',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -147,3 +148,6 @@ CART_SESSION_ID = 'cart'
 # django-paypal settings
 PAYPAL_RECEIVER_EMAIL = 'touseef.ghazanfar-facilitator@gmail.com'
 PAYPAL_TEST = True
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
