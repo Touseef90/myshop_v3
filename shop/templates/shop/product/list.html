@@ -20,7 +20,19 @@
         </ul>
     </div>
     <div id="main" class="product-list">
-        <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
+        {% if c_based_products %}
+            <h1>Recommended products for you</h1>
+            {% for p in c_based_products %}
+                <div class="item">
+                    <a href="{{ p.get_absolute_url }}">
+                        <img src="{% if p.image %}{{ p.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}">
+                    </a>
+                    <a href="{{ p.get_absolute_url }}">{{ p.name }}</a><br>
+                    ${{ p.price }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <h1 {% if c_based_products %}style="margin-top: 375px;"{% endif %}>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
         {% for product in products %}
             <div class="item">
                 <a href="{{ product.get_absolute_url }}">
